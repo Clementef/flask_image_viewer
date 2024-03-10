@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Viewer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <h1>Image Viewer</h1>
+
+    <div class="pagination">
+      {% if page > 1 %}
+      <a href="?page={{ page - 1 }}">Previous</a>
+      {% else %}
+      <span class="disabled">Previous</span>
+      {% endif %}
+
+      Page {{ page }} of {{ total_pages }}
+
+      {% if page < total_pages %}
+      <a href="?page={{ page + 1 }}">Next</a>
+      {% else %}
+      <span class="disabled">Next</span>
+      {% endif %}
+    </div>
+
+    <div class="gallery">
+        {% for image in images %}
+        <a class="grid-element" href="/images/{{ image }}" target="_blank">
+            <div class="image"><img src="/images/{{ image }}" alt="{{ image }}"></div>
+        </a>
+        {% endfor %}
+    </div>
+
+</body>
+
+</html>
+
