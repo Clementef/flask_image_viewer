@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Viewer</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='normalize.css') }}">
 </head>
 
 <body>
+    <div class="container">
+
     <h1>Image Viewer</h1>
 
     <div class="pagination">
@@ -27,12 +30,16 @@
       {% endif %}
     </div>
 
-    <div class="gallery">
+    <ul class="image-gallery">
         {% for image in images %}
-        <a class="grid-element" href="/images/{{ image }}" target="_blank">
-            <div class="image"><img src="/images/{{ image }}" alt="{{ image }}"></div>
-        </a>
+        <li>
+            <a href="/images/{{ image }}" target="_blank">
+            <img src="/images/{{ image }}" alt="{{ image }}">
+            <!-- <div class="overlay"><span>Image title</span></div> -->
+            </a>
+        </li>
         {% endfor %}
+    </ul>
     </div>
 
 </body>

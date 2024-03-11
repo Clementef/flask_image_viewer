@@ -1,22 +1,35 @@
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-auto-rows: 200px;
-  gap: 10px;
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
-.image {
+.image-gallery {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: .5rem;
 }
 
-.image img {
-  max-width: 100%;
-  max-height: 100%;
+.image-gallery > li {
+  flex: 1 1 auto;
+  height: 12rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.image-gallery li img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
   vertical-align: middle;
+  border-radius: .2rem;
 }
 
-.grid-element {
-    background-color: #ddd;
+.image-gallery::after {
+  content: "";
+  flex-grow: 999;
+}
+
+.container {
+    margin: 0 2rem 1rem 2rem;
 }
