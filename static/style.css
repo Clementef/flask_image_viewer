@@ -11,6 +11,10 @@ a {
     color: #555;
 }
 
+.image-card {
+    background-color: #353535;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -44,5 +48,5 @@ ul {
 }
 
 .container {
-    margin: 0 2rem 1rem 2rem;
+    margin: 0 2rem 2rem 2rem;
 }
